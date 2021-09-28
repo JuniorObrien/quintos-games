@@ -105,12 +105,18 @@
 
 			/* PART A4: implement guessing letters */
 			let isCorrect = false;
-			for (let i = 0; i < word.length; i++) {
-				if (guess == word[i]) {
-					lines[i] = guess;
-					isCorrect = true;
+
+			if (guess.length == 1) {
+				for (let i = 0; i < word.length; i++) {
+					if (guess == word[i]) {
+						lines[i] = guess;
+						isCorrect = true;
+					}
 				}
+			} else if (guess == word) {
+				break;
 			}
+
 			if (isCorrect == false) {
 				incorrect++;
 			}
